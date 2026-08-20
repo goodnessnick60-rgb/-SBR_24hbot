@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 
 if not TOKEN:
+    logger.error("No TELEGRAM_BOT_TOKEN found in environment variables")
     raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables")
 
 # Free summarization API (no key required)
